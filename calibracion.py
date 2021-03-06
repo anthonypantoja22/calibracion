@@ -13,7 +13,7 @@ objp[:,:2] = 19*np.mgrid[0:8,0:8].T.reshape(-1,2)
 # Arrays para almacenar puntos de objeto y puntos de imagen de todas las imágenes.
 objpoints = [] # 3d point in real world space
 imgpoints = [] # 2d points in image plane
-images = glob.glob('calibracion/prueba2/*.jpg')
+images = glob.glob('calibracion/prueba2/*.jpg') #escoger las carpetas de pruebas en la carpeta de calibracion, puede der prueba1 o prueba2
 
 i = 1 
 for fname in images:
@@ -67,6 +67,6 @@ for rname in images:
     # x,y,w,h = roi
     # dst = dst[y:y+h, x:x+w]
     cv2.imshow('img',dst)
-    cv2.imwrite('resultado de calibracion/resultado de calibracion 1/%s'%rname,dst)
+    cv2.imwrite('resultado de calibracion/resultado de calibracion 1/%s'%rname,dst) #guardado de resultado en carpeta resultado de calibracion,solo ambiar el numero en la segundo parte para cambiar destino
     cv2.waitKey(0)
 cv2.destroyAllWindows()
